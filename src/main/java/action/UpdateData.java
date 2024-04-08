@@ -10,6 +10,6 @@ import static util.TestUtil.QA_DEPARTMENT;
 public class UpdateData {
     public static void main(String[] args) throws SQLException {
         UpdateEmployees.raiseSalaries(INCREASE_AMOUNT);
-        UpdateEmployees.raiseSalariesForSpecificDepartment(INCREASE_AMOUNT, QA_DEPARTMENT);
+        //UpdateEmployees.raiseSalariesForSpecificDepartment(INCREASE_AMOUNT, QA_DEPARTMENT);
     }
 }
