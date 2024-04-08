@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 public class TestHelper {
 
-
     public static boolean checkNumberOfEmployees(int requiredNumber) throws SQLException {
         boolean exists = false;
         try (Connection connection = DatabaseManager.connectWithDatabase();
@@ -55,5 +54,23 @@ public class TestHelper {
         }
         return present;
     }
+
+    public static boolean areEmployesPresenetedInDB() {
+        boolean present = false;
+        try(Connection connection = DatabaseManager.connectWithDatabase();
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT COUNT(*) AS count FROM employees")) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int count = resultSet.getInt("count");
+                present = count > 0;
+            }
+
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return present;
+    }
+
+
 
 }

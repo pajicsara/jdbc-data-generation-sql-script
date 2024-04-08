@@ -6,8 +6,6 @@ import java.util.logging.Logger;
 
 public class DatabaseHelper {
 
-    private static final Logger logger = Logger.getLogger(DatabaseHelper.class.getName());
-
     static void printResultSet(ResultSet resultSet) throws SQLException {
         while (resultSet.next()) {
             int id = resultSet.getInt("id");
@@ -17,8 +15,14 @@ public class DatabaseHelper {
             String department = resultSet.getString("department");
             double salary = resultSet.getDouble("salary");
 
-            logger.info(String.format("**** ID: %d last name: %s first name: %s email: %s department: %s salary: %.2f ***",
-                    id, lastName, firstName, email, department, salary));
+            System.out.println("New employee added:");
+            System.out.println("ID: " + id);
+            System.out.println("First name: " + firstName);
+            System.out.println("Last name: " + lastName);
+            System.out.println("Email: " + email);
+            System.out.println("Department: " + department);
+            System.out.println("Salary: " + String.format("%.2f", salary));
+            System.out.println("--------------------");
         }
     }
 }
