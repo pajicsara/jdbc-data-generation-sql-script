@@ -26,4 +26,14 @@ public class EmployeeDataGenerator {
         return MINIMUM_SALARY + (random.nextDouble() * (MAXIMUM_SALARY - MINIMUM_SALARY));
     }
 
+    public static void printEmployees(String firstName, String lastName, String email, String department, double salary) {
+        System.out.println("New employee added:");
+        System.out.println("First name: " + firstName);
+        System.out.println("Last name: " + lastName);
+        System.out.println("Email: " + email);
+        System.out.println("Department: " + department);
+        System.out.println("Salary: " + String.format("%.2f", salary));
+        System.out.println("--------------------");
+    }
+
 }

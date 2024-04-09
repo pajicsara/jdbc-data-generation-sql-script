@@ -1,14 +1,27 @@
+import helper.TestHelper;
+import helper.UpdateEmployees;
 import org.junit.jupiter.api.Test;
+
+import java.sql.SQLException;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import static util.TestUtil.INCREASE_AMOUNT;
+import static util.TestUtil.MINIMUM_SALARY;
+import static util.TestUtil.QA_DEPARTMENT;
 
 public class UpdateEmployeesTest {
 
-    // uradi update plata za + 500 i proveri da li neko ima manju platu od 1000 (postonam je 500 najmanje pocetna, tako
-    // je definisana ona random funkcija
     @Test
-    public void raiseSalaries() {
-
+    public void raiseSalaries() throws SQLException {
+        UpdateEmployees.raiseSalaries(INCREASE_AMOUNT);
+        assertFalse(TestHelper.areEmployeesWithSalaryBelowPresent(INCREASE_AMOUNT + MINIMUM_SALARY));
     }
 
-    // ko ima platu preko 3000, updatuj mu ime na dr pa ime
-    // onda odradi select da proveris da li svi sa velikom patom imaju sr u imenu
+    @Test
+    public void raiseSalriesForSpecificDepartment() throws SQLException {
+        UpdateEmployees.raiseSalariesForSpecificDepartment(2 * INCREASE_AMOUNT, QA_DEPARTMENT);
+        assertFalse(TestHelper.areEmployeesWithSalaryBelowPresent(3 * INCREASE_AMOUNT + MINIMUM_SALARY));
+    }
+
 }

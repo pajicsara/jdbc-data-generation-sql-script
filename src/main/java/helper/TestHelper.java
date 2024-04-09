@@ -39,6 +39,24 @@ public class TestHelper {
         return present;
     }
 
+    public static boolean isEmployeeWithSalaryBelowInDepartment(double threshold, String departmentName) {
+        boolean present = false;
+        try (Connection connection = DatabaseManager.connectWithDatabase();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT COUNT(*) AS count FROM employees WHERE salary < ? AND department = ?")) {
+            preparedStatement.setDouble(1, threshold);
+            preparedStatement.setString(2, departmentName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int count = resultSet.getInt("count");
+                present = count > 0;
+            }
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return present;
+    }
+
+
     public static boolean areEmployeesFromDepartmentPresent(String department) {
         boolean present = false;
         try (Connection connection = DatabaseManager.connectWithDatabase();
@@ -54,23 +72,5 @@ public class TestHelper {
         }
         return present;
     }
-
-    public static boolean areEmployesPresenetedInDB() {
-        boolean present = false;
-        try(Connection connection = DatabaseManager.connectWithDatabase();
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT COUNT(*) AS count FROM employees")) {
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                int count = resultSet.getInt("count");
-                present = count > 0;
-            }
-
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-        }
-        return present;
-    }
-
-
 
 }

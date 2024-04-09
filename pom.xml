@@ -55,9 +55,9 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>3.2.0</version> <!-- Verzija plugin-a -->
+                    <version>3.2.0</version>
                     <configuration>
-                        <mainClass>action.InsertData</mainClass> <!-- Vaša glavna klasa -->
+                        <mainClass>action.InsertData</mainClass> <!-- Main class -->
                     </configuration>
                 </plugin>
 
