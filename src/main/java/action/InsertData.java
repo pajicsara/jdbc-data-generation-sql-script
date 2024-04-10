@@ -13,9 +13,9 @@ public class InsertData {
         //ADD 10 EMPLOYEES FOR RANDOM DEPARTMENTS
         AddEmployees.addEmployeesToTable(NUMBER_OF_EMPLOYEES_TO_ADD);
         //ADD 10 EMPLOYEES FOR IT DEPARTMENT
-        //AddEmployees.addEmployeesForSpecificDepartment(NUMBER_OF_EMPLOYEES_TO_ADD, IT_DEPARTMENT);
+        AddEmployees.addEmployeesForSpecificDepartment(NUMBER_OF_EMPLOYEES_TO_ADD, IT_DEPARTMENT);
         //ADD 10 EMPLOYEES FOR QA DEPARTMENT
-        //AddEmployees.addEmployeesForSpecificDepartment(NUMBER_OF_EMPLOYEES_TO_ADD, QA_DEPARTMENT);
+        AddEmployees.addEmployeesForSpecificDepartment(NUMBER_OF_EMPLOYEES_TO_ADD, QA_DEPARTMENT);
         //ADD 10 EMPLOYEES FOR HR DEPARTMENT
         AddEmployees.addEmployeesForSpecificDepartment(NUMBER_OF_EMPLOYEES_TO_ADD, HR_DEPARTMENT);
     }
