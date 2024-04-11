@@ -1,8 +1,11 @@
 package action;
 
-import static util.TestUtil.HR_DEPARTMENT;
+import helper.DeleteEmployees;
 
-public class DeleteEmployees {
+import static util.TestUtil.LOW_SALARY_BOUND;
+import static util.TestUtil.QA_DEPARTMENT;
+
+public class DeleteEmployeesInvoke {
 
     public static void main(String[] args) {
         //DELETE ALL EMPLOYEES WITH SALARY BELLOW X
@@ -12,7 +15,7 @@ public class DeleteEmployees {
         //DeleteEmployees.deleteAllEmployeesFromDB();
 
         //DELETE ALL EMPLOYEES FROM SPECIFIC DEPARTMENTS
-        helper.DeleteEmployees.deleteAllEmployeesFromDepartment(HR_DEPARTMENT);
+        DeleteEmployees.deleteAllEmployeesFromDepartment(QA_DEPARTMENT);
     }
 }
 

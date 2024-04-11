@@ -16,7 +16,7 @@ public class DeleteEmployees {
 
             preparedStatement.setDouble(1, lowSalaryBound);
             int rowsAffected = preparedStatement.executeUpdate();
-            System.out.println("Deleted " + rowsAffected + " employees with salary below " + lowSalaryBound);
+            System.out.println(rowsAffected + " EMPLOYEE(S) WITH SALARY" + lowSalaryBound + "DELETED");
 
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -28,7 +28,7 @@ public class DeleteEmployees {
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_ALL_EMPLOYEES)) {
 
             preparedStatement.executeUpdate();
-            System.out.println("All data deleted from table");
+            System.out.println("ALL EMPLOYEES ARE DELETED FROM DATABASE.");
 
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -41,7 +41,7 @@ public class DeleteEmployees {
 
             preparedStatement.setString(1, department);
             int rowsAffected = preparedStatement.executeUpdate();
-            System.out.println("All employees from " + department + " department are deleted.");
+            System.out.println("ALL EMPLOYEES FROM " + department + " DEPARTMENT ARE DELETED.");
 
         } catch (SQLException exception) {
             exception.printStackTrace();

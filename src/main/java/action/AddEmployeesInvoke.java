@@ -5,7 +5,7 @@ import static util.TestUtil.IT_DEPARTMENT;
 import static util.TestUtil.QA_DEPARTMENT;
 import static util.TestUtil.HR_DEPARTMENT;
 
-public class AddEmployees {
+public class AddEmployeesInvoke {
     //dodaj isppisa za svakog radnika kog dodajes
     public static void main(String[] args) {
         //ADD 10 EMPLOYEES FOR RANDOM DEPARTMENTS

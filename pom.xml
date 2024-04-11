@@ -59,7 +59,7 @@
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>3.2.0</version>
                     <configuration>
-                        <mainClass>action.AddEmployees</mainClass> <!-- Main class -->
+                        <mainClass>action.AddEmployeesInvoke</mainClass> <!-- Main class -->
                     </configuration>
                 </plugin>
 
@@ -73,7 +73,7 @@
                             <manifest>
                                 <addClasspath>true</addClasspath>
                                 <classpathPrefix>lib/</classpathPrefix>
-                                <mainClass>action.AddEmployees</mainClass>
+                                <mainClass>action.AddEmployeesInvoke</mainClass>
                             </manifest>
                         </archive>
                     </configuration>
