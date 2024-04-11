@@ -19,10 +19,15 @@ public class UpdateEmployees {
                 preparedStatement.setDouble(1, currentSalary + increaseAmount);
                 preparedStatement.setInt(2, id);
 
+                double newSalary = currentSalary + increaseAmount;
+
                 int updatedRows = preparedStatement.executeUpdate();
 
                 if (updatedRows > 0) {
-                    System.out.println("SALARY CHANGED for employee with ID " + id);
+                    System.out.println("SALARY CHANGED FOR EMPLOYEE WITH ID " + id);
+                    System.out.println("OLD SALARY: " + currentSalary);
+                    System.out.println("NEW SALARY: " + newSalary);
+                    System.out.println("--------------------");
                 } else {
                     System.out.println("Something went wrong with the salary for employee with ID " + id);
                 }
@@ -48,10 +53,15 @@ public class UpdateEmployees {
                 updateStatement.setDouble(1, currentSalary + increaseAmount);
                 updateStatement.setInt(2, id);
 
+                double newSalary = currentSalary + increaseAmount;
+
                 int updatedRows = updateStatement.executeUpdate();
 
                 if (updatedRows > 0) {
-                    System.out.println("Salary for employee with ID " + id + " in department " + department + " changed.");
+                    System.out.println("SALARY CHANGED FOR EMPLOYEE WITH ID " + id);
+                    System.out.println("OLD SALARY: " + currentSalary);
+                    System.out.println("NEW SALARY: " + String.format("%.2f", newSalary));
+                    System.out.println("--------------------");
                 } else {
                     System.out.println("Something went wrong with the salary for employee with ID " + id);
                 }
