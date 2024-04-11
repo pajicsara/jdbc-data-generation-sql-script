@@ -106,10 +106,10 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.2.5</version> <!-- Verzija Surefire plugina -->
+                    <version>3.2.5</version>
                     <configuration>
                         <includes>
-                            <include>**/WorkflowTestSuite.java</include> <!-- Putanja do vaše test klase -->
+                            <include>**/WorkflowTestSuite.java</include> <!-- test class -->
                         </includes>
                     </configuration>
                 </plugin>
