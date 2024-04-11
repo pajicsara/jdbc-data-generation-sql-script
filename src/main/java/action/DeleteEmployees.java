@@ -1,18 +1,18 @@
 package action;
 
-import helper.DeleteEmployees;
-
 import static util.TestUtil.HR_DEPARTMENT;
-import static util.TestUtil.MINIMUM_SALARY;
 
-public class DeleteData {
+public class DeleteEmployees {
 
     public static void main(String[] args) {
         //DELETE ALL EMPLOYEES WITH SALARY BELLOW X
-        //DeleteEmployees.deleteEmployeesWithSalaryBelow(MINIMUM_SALARY);
+        //DeleteEmployees.deleteEmployeesWithSalaryBelow(LOW_SALARY_BOUND);
+
         //DELETE ALL EMPLOYEES FROM DATABASE
         //DeleteEmployees.deleteAllEmployeesFromDB();
-        DeleteEmployees.deleteAllEmployeesFromDepartment(HR_DEPARTMENT);
+
+        //DELETE ALL EMPLOYEES FROM SPECIFIC DEPARTMENTS
+        helper.DeleteEmployees.deleteAllEmployeesFromDepartment(HR_DEPARTMENT);
     }
 }
 
