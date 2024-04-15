@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage("Clean Up") {
+            steps {
+                deleteDir()
+            }
+        }
+        stage("Clone Repo") {
+            steps {
+                bat "git clone https://github.com/pajicsara/jdbc-data-generation-sql-script.git"
+            }
+        }
+        stage("Build") {
+            steps {
+                dir("jdbc-data-generation-sql-script") {
+                    bat "mvn clean install"
+                }
+            }
+        }
+        stage("Test") {
+            steps {
+                dir("jdbc-data-generation-sql-script") {
+                    bat "mvn test"
+                }
+            }
+        }
+    }
+}
