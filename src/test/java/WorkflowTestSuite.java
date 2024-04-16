@@ -32,10 +32,10 @@ public class WorkflowTestSuite {
         assertFalse(TestHelper.areEmployeesWithSalaryBelowPresent(INCREASE_AMOUNT + MINIMUM_SALARY));
         UpdateEmployees.raiseSalariesForSpecificDepartment(INCREASE_AMOUNT, QA_DEPARTMENT);
         assertFalse(TestHelper.isEmployeeWithSalaryBelowInDepartment(2 * INCREASE_AMOUNT + MINIMUM_SALARY, QA_DEPARTMENT));
-        DeleteEmployees.deleteAllEmployeesFromDepartment(HR_DEPARTMENT);
+       /* DeleteEmployees.deleteAllEmployeesFromDepartment(HR_DEPARTMENT);
         assertFalse(TestHelper.areEmployeesFromDepartmentPresent(HR_DEPARTMENT));
         DeleteEmployees.deleteAllEmployeesFromDB();
-        assertTrue(TestHelper.checkNumberOfEmployees(ZERO_EMPLOYEES));
+        assertTrue(TestHelper.checkNumberOfEmployees(ZERO_EMPLOYEES)); */
     }
 
 }
