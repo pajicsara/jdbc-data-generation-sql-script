@@ -6,7 +6,7 @@ import static util.TestUtil.QA_DEPARTMENT;
 import static util.TestUtil.HR_DEPARTMENT;
 
 public class AddEmployeesInvoke {
-    //dodaj isppisa za svakog radnika kog dodajes
+
     public static void main(String[] args) {
         //ADD 10 EMPLOYEES FOR RANDOM DEPARTMENTS
         helper.AddEmployees.addEmployeesToTable(NUMBER_OF_EMPLOYEES_TO_ADD);
