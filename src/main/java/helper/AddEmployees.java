@@ -6,7 +6,6 @@ import static util.SqlQueries.ADD_EMPLOYEE_TO_DATABASE;
 
 public class AddEmployees {
 
-
     //Generate one common method for those two methods, so if department is sent as a parameter add that department, and if not add random department?
     public static void addEmployeesToTable(int numberOfEmployees) {
         System.out.printf("%d EMPLOYEES WILL BE ADDED TO DATABASE:%n", numberOfEmployees);
